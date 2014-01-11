@@ -12,5 +12,5 @@ function title {
   fi
 }
 
-ZSH_THEME_GIT_PROMPT_PREFIX=" %{$fg[cyan]%}git:("
-ZSH_THEME_GIT_PROMPT_SUFFIX=")%{$reset_color%}"
+ZSH_THEME_GIT_PROMPT_PREFIX=" %{$FG[125]%}["
+ZSH_THEME_GIT_PROMPT_SUFFIX="]%{$reset_color%}"
