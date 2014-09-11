@@ -33,10 +33,10 @@ if [[ "${terminfo[knp]}" != "" ]]; then
 fi
 
 if [[ "${terminfo[kcuu1]}" != "" ]]; then
-  bindkey "${terminfo[kcuu1]}" history-beginning-search-backward      # start typing + [Up-Arrow] - fuzzy find history forward
+  bindkey "${terminfo[kcuu1]}" history-beginning-search-backward-end      # start typing + [Up-Arrow] - fuzzy find history forward
 fi
 if [[ "${terminfo[kcud1]}" != "" ]]; then
-  bindkey "${terminfo[kcud1]}" history-beginning-search-forward    # start typing + [Down-Arrow] - fuzzy find history backward
+  bindkey "${terminfo[kcud1]}" history-beginning-search-forward-end    # start typing + [Down-Arrow] - fuzzy find history backward
 fi
 
 if [[ "${terminfo[khome]}" != "" ]]; then
