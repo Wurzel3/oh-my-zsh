@@ -3,17 +3,6 @@
 #PROMPT='%{$fg[yellow]%}$(hostname -f)%{$reset_color%}:%{$fg[cyan]%}%n%{$reset_color%}:%{$fg[green]%}%/%{$reset_color%} $(git_prompt_info) %(!.#.$) '
 #PROMPT='%{$fg[cyan]%}%n%{$reset_color%}@%{$fg[yellow]%}$(hostname -f):%{$fg[green]%}%~%{$reset_color%} $(git_prompt_info) %(!.#.$) '
 
-string_colors=(1 2 3 4 5 6 8 9 10 11 12 27 28 29 30 76 77 82 124 125 128 142 148 154)
-string_to_color() {
-  echo $string_colors[$(echo "$1" | od | tr ' ' '\n' | awk '{total = total + $1}END{print total % 25}')] 
-}
-
-hostnamecolor=$(string_to_color `hostname -f`)
-usercolor=$(string_to_color `whoami`)
-if [ "`whoami`" = "root" ]; then
-    usercolor=1
-fi
-
 PROMPT='%F{%{$usercolor%}%n%{$reset_color%}@%F{%{$hostnamecolor%}$(hostname -f):%F{255}%{$fg[green]%}%~%{$reset_color%} $(git_prompt_info) %(!.#.$) '
 
 function title {
