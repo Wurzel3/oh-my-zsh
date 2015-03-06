@@ -31,7 +31,12 @@ git_submodule_syntax() {
   fi
 }
 
-PROMPT='%{$fg[cyan]%}%n%{$reset_color%}@%{$fg[yellow]%}$(hostname -f):%{$fg[green]%}%~%{$reset_color%} $(git_prompt_info) %(!.#.$) '
+hostnamecolor() {
+ echo $(hostname | od | tr ' ' '\n' | awk '{total = total + $1}END{print 1+total%14}')
+}
+
+
+PROMPT='%{$fg[cyan]%}%n%{$reset_color%}@%F{%{$(hostnamecolor)%}$(hostname -f):%{$fg[green]%}%~%{$reset_color%} $(git_prompt_info) %(!.#.$) '
 
 #function title {
 #  if [[ "$TERM" == screen* ]]; then
