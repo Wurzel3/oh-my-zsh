@@ -3,7 +3,7 @@
 #PROMPT='%{$fg[yellow]%}$(hostname -f)%{$reset_color%}:%{$fg[cyan]%}%n%{$reset_color%}:%{$fg[green]%}%/%{$reset_color%} $(git_prompt_info) %(!.#.$) '
 #PROMPT='%{$fg[cyan]%}%n%{$reset_color%}@%{$fg[yellow]%}$(hostname -f):%{$fg[green]%}%~%{$reset_color%} $(git_prompt_info) %(!.#.$) '
 
-PROMPT='%F{%{$usercolor%}%n%{$reset_color%}@%F{%{$hostnamecolor%}$(hostname -f):%F{255}%{$fg[green]%}%~%{$reset_color%} $(git_prompt_info) %(!.#.$) '
+PROMPT='%F{$usercolor}%n%{$reset_color%}@%F{$hostnamecolor}$(hostname -f):%f%{$fg[green]%}%~%{$reset_color%} $(git_prompt_info) %(!.#.$) '
 
 function title {
   if [[ "$TERM" == screen* ]]; then

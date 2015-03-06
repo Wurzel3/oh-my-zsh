@@ -32,7 +32,7 @@ git_submodule_syntax() {
 }
 
 
-PROMPT='%F{%{$usercolor%}%n%{$reset_color%}@%F{%{$hostnamecolor%}$(hostname -f):%F{255}%{$fg[green]%}%~%{$reset_color%} $(git_prompt_info) %(!.#.$) '
+PROMPT='%F{$usercolor}%n%{$reset_color%}@%F{$hostnamecolor}$(hostname -f):%f%{$fg[green]%}%~%{$reset_color%} $(git_prompt_info) %(!.#.$) '
 
 #function title {
 #  if [[ "$TERM" == screen* ]]; then
